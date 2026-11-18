@@ -10,7 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -22,19 +22,13 @@
   --muted: #777C76;
   --white: #FFFFFF;
 
-  --sans: 'Manrope', sans-serif;
-  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Montserrat', sans-serif;
+  --serif: 'Bodoni Moda', Georgia, serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--ivory);
@@ -44,14 +38,8 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
 
 /* CURSOR */
 
@@ -77,23 +65,18 @@ button {
   opacity: 0;
 }
 
-.cursor.visible {
-  opacity: 1;
-}
-
-.cursor.hover {
-  width: 38px;
-  height: 38px;
-}
+.cursor.visible { opacity: 1; }
+.cursor.hover { width: 38px; height: 38px; }
 
 /* ANNOUNCEMENT */
 
 .announcement {
   background: var(--teal);
-  color: var(--white);
+  color: white;
   text-align: center;
   padding: 11px 15px;
   font-size: 9px;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -111,43 +94,37 @@ header {
   z-index: 20;
 }
 
-.nav-left,
-.nav-right {
+.nav-left, .nav-right {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-.nav-right {
-  justify-content: flex-end;
-}
+.nav-right { justify-content: flex-end; }
 
 nav a {
   font-size: 9px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   transition: color .3s;
 }
 
-nav a:hover {
-  color: var(--teal);
-}
+nav a:hover { color: var(--teal); }
 
-.brand {
-  text-align: center;
-}
+.brand { text-align: center; }
 
 .brand-name {
   font-family: var(--sans);
   font-size: 23px;
-  font-weight: 500;
-  letter-spacing: 4px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
 }
 
 .brand-subtitle {
   font-size: 8px;
+  font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-top: 6px;
@@ -182,12 +159,11 @@ nav a:hover {
   gap: 22px;
 }
 
-.mobile-nav.open {
-  display: flex;
-}
+.mobile-nav.open { display: flex; }
 
 .mobile-nav a {
   font-size: 10px;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -201,7 +177,6 @@ nav a:hover {
   position: relative;
   display: flex;
   align-items: flex-end;
-
   background:
     linear-gradient(to top, rgba(15,25,30,.52), transparent 65%),
     url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2200&q=90')
@@ -211,23 +186,23 @@ nav a:hover {
 .hero-content {
   color: white;
   padding: 0 9% 85px;
-  max-width: 850px;
+  max-width: 900px;
   animation: appear 1.2s ease both;
 }
 
 .eyebrow {
   font-size: 9px;
+  font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 20px;
-  font-weight: 500;
 }
 
 .hero h1 {
   font-family: var(--sans);
   font-size: clamp(55px, 8vw, 105px);
-  font-weight: 300;
-  line-height: 1.03;
+  font-weight: 700;
+  line-height: .98;
   letter-spacing: -5px;
   margin-bottom: 25px;
 }
@@ -238,7 +213,7 @@ nav a:hover {
   line-height: 2;
   max-width: 390px;
   margin-bottom: 35px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .outline-button {
@@ -247,6 +222,7 @@ nav a:hover {
   border: 1px solid rgba(255,255,255,.8);
   color: white;
   font-size: 9px;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
   transition: background .3s, color .3s;
@@ -266,16 +242,14 @@ nav a:hover {
   margin: auto;
 }
 
-.intro .eyebrow {
-  color: var(--teal);
-}
+.intro .eyebrow { color: var(--teal); }
 
 .intro h2 {
   font-family: var(--sans);
   font-size: clamp(32px, 4.5vw, 51px);
-  font-weight: 300;
-  line-height: 1.25;
-  letter-spacing: -1.8px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -2px;
   margin-bottom: 25px;
 }
 
@@ -299,15 +273,13 @@ nav a:hover {
   margin-bottom: 65px;
 }
 
-.section-heading .eyebrow {
-  color: var(--teal);
-}
+.section-heading .eyebrow { color: var(--teal); }
 
 .section-heading h2 {
   font-family: var(--sans);
   font-size: clamp(32px, 4vw, 48px);
-  font-weight: 300;
-  letter-spacing: -1.5px;
+  font-weight: 700;
+  letter-spacing: -2px;
 }
 
 .section-heading p {
@@ -324,9 +296,7 @@ nav a:hover {
   margin: auto;
 }
 
-.painting-card {
-  min-width: 0;
-}
+.painting-card { min-width: 0; cursor: pointer; }
 
 .painting-image {
   width: 100%;
@@ -343,9 +313,7 @@ nav a:hover {
   transition: transform .8s cubic-bezier(.2,.7,.3,1);
 }
 
-.painting-card:hover img {
-  transform: scale(1.04);
-}
+.painting-card:hover img { transform: scale(1.04); }
 
 .view-label {
   position: absolute;
@@ -355,6 +323,7 @@ nav a:hover {
   color: var(--teal);
   padding: 13px 18px;
   font-size: 8px;
+  font-weight: 700;
   letter-spacing: 1.5px;
   opacity: 0;
   transform: translateY(5px);
@@ -375,7 +344,7 @@ nav a:hover {
 
 .painting-title {
   font-family: var(--serif);
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 500;
 }
 
@@ -387,6 +356,7 @@ nav a:hover {
 
 .painting-price {
   font-size: 11px;
+  font-weight: 500;
   white-space: nowrap;
   padding-top: 7px;
 }
@@ -413,16 +383,14 @@ nav a:hover {
   padding: 70px 12%;
 }
 
-.feature-text .eyebrow {
-  color: var(--teal);
-}
+.feature-text .eyebrow { color: var(--teal); }
 
 .feature-text h2 {
   font-family: var(--sans);
   font-size: clamp(36px, 4.5vw, 59px);
-  font-weight: 300;
-  line-height: 1.12;
-  letter-spacing: -2px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -2.5px;
   margin-bottom: 25px;
 }
 
@@ -441,14 +409,13 @@ nav a:hover {
   border-bottom: 1px solid var(--teal);
   color: var(--teal);
   font-size: 9px;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
   transition: opacity .3s;
 }
 
-.text-link:hover {
-  opacity: .6;
-}
+.text-link:hover { opacity: .6; }
 
 /* ABOUT */
 
@@ -463,15 +430,13 @@ nav a:hover {
   margin: 0 auto 25px;
 }
 
-.about .eyebrow {
-  color: var(--teal);
-}
+.about .eyebrow { color: var(--teal); }
 
 .about h2 {
   font-family: var(--sans);
   font-size: 48px;
-  font-weight: 300;
-  letter-spacing: -1.5px;
+  font-weight: 600;
+  letter-spacing: -2px;
   margin-bottom: 25px;
 }
 
@@ -491,15 +456,13 @@ nav a:hover {
   background: var(--white);
 }
 
-.contact .eyebrow {
-  color: var(--teal);
-}
+.contact .eyebrow { color: var(--teal); }
 
 .contact h2 {
   font-family: var(--sans);
   font-size: 43px;
-  font-weight: 300;
-  letter-spacing: -1px;
+  font-weight: 600;
+  letter-spacing: -1.5px;
   margin-bottom: 15px;
 }
 
@@ -529,8 +492,8 @@ footer {
 .footer-brand {
   font-family: var(--sans);
   font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 3px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
 }
 
@@ -543,14 +506,13 @@ footer {
 
 .footer-links a {
   font-size: 9px;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   transition: opacity .3s;
 }
 
-.footer-links a:hover {
-  opacity: .6;
-}
+.footer-links a:hover { opacity: .6; }
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.25);
@@ -575,9 +537,7 @@ footer {
   justify-content: center;
 }
 
-.modal.active {
-  display: flex;
-}
+.modal.active { display: flex; }
 
 .modal-content {
   background: var(--ivory);
@@ -603,9 +563,7 @@ footer {
   justify-content: center;
 }
 
-.modal-details .eyebrow {
-  color: var(--teal);
-}
+.modal-details .eyebrow { color: var(--teal); }
 
 .modal-details h2 {
   font-family: var(--serif);
@@ -633,15 +591,14 @@ footer {
   padding: 18px 20px;
   text-align: center;
   font-size: 9px;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
   border: none;
   transition: background .3s;
 }
 
-.buy-button:hover {
-  background: var(--teal-dark);
-}
+.buy-button:hover { background: var(--teal-dark); }
 
 .close-modal {
   position: absolute;
@@ -657,14 +614,8 @@ footer {
 /* ANIMATION */
 
 @keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* MOBILE */
@@ -677,28 +628,21 @@ footer {
     padding: 0 5%;
   }
 
-  .nav-left,
-  .nav-right {
-    display: none;
-  }
+  .nav-left, .nav-right { display: none; }
 
   .mobile-menu {
     display: block;
     grid-column: 1;
   }
 
-  .brand {
-    grid-column: 2;
-  }
+  .brand { grid-column: 2; }
 
   .brand-name {
-    font-size: 17px;
-    letter-spacing: 2px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
   }
 
-  .brand-subtitle {
-    font-size: 6px;
-  }
+  .brand-subtitle { font-size: 6px; }
 
   .crest {
     width: 30px;
@@ -710,50 +654,31 @@ footer {
     height: 75vh;
   }
 
-  .hero-content {
-    padding: 0 7% 65px;
-  }
+  .hero-content { padding: 0 7% 65px; }
 
   .hero h1 {
     letter-spacing: -2px;
+    font-size: clamp(48px, 12vw, 75px);
   }
 
-  .intro {
-    padding: 85px 25px;
-  }
+  .intro { padding: 85px 25px; }
 
-  .collection {
-    padding: 75px 5% 90px;
-  }
+  .collection { padding: 75px 5% 90px; }
 
   .painting-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 35px 14px;
   }
 
-  .painting-title {
-    font-size: 20px;
-  }
+  .painting-title { font-size: 21px; }
 
-  .painting-price {
-    font-size: 10px;
-  }
+  .feature { grid-template-columns: 1fr; }
 
-  .feature {
-    grid-template-columns: 1fr;
-  }
+  .feature-image { min-height: 400px; }
 
-  .feature-image {
-    min-height: 400px;
-  }
+  .feature-text { padding: 75px 8%; }
 
-  .feature-text {
-    padding: 75px 8%;
-  }
-
-  .about {
-    padding: 90px 25px;
-  }
+  .about { padding: 90px 25px; }
 
   .modal-content {
     grid-template-columns: 1fr;
@@ -765,9 +690,7 @@ footer {
     min-height: 0;
   }
 
-  .modal-details {
-    padding: 30px;
-  }
+  .modal-details { padding: 30px; }
 
   .footer-top {
     grid-template-columns: 1fr 1fr;
@@ -779,24 +702,16 @@ footer {
     grid-row: 1;
   }
 
-  .footer-links {
-    text-align: center;
-  }
+  .footer-links { text-align: center; }
 
-  .cursor {
-    display: none;
-  }
+  .cursor { display: none; }
 }
 
 @media(max-width: 450px) {
 
-  .painting-grid {
-    grid-template-columns: 1fr;
-  }
+  .painting-grid { grid-template-columns: 1fr; }
 
-  .painting-image {
-    aspect-ratio: 4 / 5;
-  }
+  .painting-image { aspect-ratio: 4 / 5; }
 
   .footer-bottom {
     flex-direction: column;
@@ -825,17 +740,11 @@ footer {
 
   <a href="#" class="brand">
 
-    <!-- TEMPORARY CREST - TO BE REDESIGNED -->
-
     <svg class="crest" viewBox="0 0 60 70" fill="none">
-      <path d="M8 7H52V36C52 49 40 59 30 65C20 59 8 49 8 36V7Z"
-        stroke="#006B62" stroke-width="1.5"/>
-      <path d="M13 12H47V35C47 45 38 54 30 59C22 54 13 45 13 35V12Z"
-        stroke="#006B62" stroke-width=".7"/>
-      <path d="M17 39C22 35 27 43 32 39C37 35 40 40 44 38"
-        stroke="#006B62" stroke-width="1.2"/>
-      <path d="M17 44C22 40 27 48 32 44C37 40 40 45 44 43"
-        stroke="#006B62" stroke-width=".8"/>
+      <path d="M8 7H52V36C52 49 40 59 30 65C20 59 8 49 8 36V7Z" stroke="#006B62" stroke-width="1.5"/>
+      <path d="M13 12H47V35C47 45 38 54 30 59C22 54 13 45 13 35V12Z" stroke="#006B62" stroke-width=".7"/>
+      <path d="M17 39C22 35 27 43 32 39C37 35 40 40 44 38" stroke="#006B62" stroke-width="1.2"/>
+      <path d="M17 44C22 40 27 48 32 44C37 40 40 45 44 43" stroke="#006B62" stroke-width=".8"/>
       <path d="M30 17V34M22 25H38" stroke="#006B62" stroke-width=".8"/>
     </svg>
 
@@ -867,9 +776,7 @@ footer {
       Original paintings inspired by the ever-changing beauty,
       character and quiet moments of the coastline.
     </p>
-    <a href="#collection" class="outline-button">
-      Explore the collection
-    </a>
+    <a href="#collection" class="outline-button">Explore the collection</a>
   </div>
 </section>
 
@@ -884,21 +791,16 @@ footer {
 </section>
 
 <section class="collection" id="collection">
-
   <div class="section-heading">
     <div class="eyebrow">The collection</div>
     <h2>Original Paintings</h2>
     <p>Discover the latest works</p>
   </div>
-
   <div class="painting-grid" id="paintingGrid"></div>
-
 </section>
 
 <section class="feature">
-
   <div class="feature-image"></div>
-
   <div class="feature-text">
     <div class="eyebrow">Inspired by the natural world</div>
     <h2>The beauty is in the details.</h2>
@@ -909,20 +811,14 @@ footer {
     </p>
     <a href="#about" class="text-link">Discover the artist</a>
   </div>
-
 </section>
 
 <section class="about" id="about">
-
   <svg class="about-crest" viewBox="0 0 60 70" fill="none">
-    <path d="M8 7H52V36C52 49 40 59 30 65C20 59 8 49 8 36V7Z"
-      stroke="#006B62" stroke-width="1.5"/>
-    <path d="M13 12H47V35C47 45 38 54 30 59C22 54 13 45 13 35V12Z"
-      stroke="#006B62" stroke-width=".7"/>
-    <path d="M17 39C22 35 27 43 32 39C37 35 40 40 44 38"
-      stroke="#006B62"/>
-    <path d="M17 44C22 40 27 48 32 44C37 40 40 45 44 43"
-      stroke="#006B62"/>
+    <path d="M8 7H52V36C52 49 40 59 30 65C20 59 8 49 8 36V7Z" stroke="#006B62" stroke-width="1.5"/>
+    <path d="M13 12H47V35C47 45 38 54 30 59C22 54 13 45 13 35V12Z" stroke="#006B62" stroke-width=".7"/>
+    <path d="M17 39C22 35 27 43 32 39C37 35 40 40 44 38" stroke="#006B62"/>
+    <path d="M17 44C22 40 27 48 32 44C37 40 40 45 44 43" stroke="#006B62"/>
   </svg>
 
   <div class="eyebrow">The artist</div>
@@ -934,99 +830,62 @@ footer {
     of being beside the sea.
   </p>
   <a href="#contact" class="text-link">Get in touch</a>
-
 </section>
 
 <section class="contact" id="contact">
-
   <div class="eyebrow">Enquiries & commissions</div>
   <h2>Let's start a conversation.</h2>
   <p>
     Interested in a painting, a commission or simply want to know more?
     I'd love to hear from you.
   </p>
-
-  <a href="mailto:YOUR_EMAIL@example.com" class="text-link">
-    Make an enquiry
-  </a>
-
+  <a href="mailto:YOUR_EMAIL@example.com" class="text-link">Make an enquiry</a>
 </section>
 
 </main>
 
 <footer>
-
   <div class="footer-top">
-
     <div class="footer-links">
       <a href="#collection">The collection</a>
       <a href="#about">About the artist</a>
       <a href="#contact">Contact</a>
     </div>
 
-    <div class="footer-brand">
-      The Coastal Studio
-    </div>
+    <div class="footer-brand">The Coastal Studio</div>
 
     <div class="footer-links">
       <a href="#">Instagram</a>
       <a href="#collection">Original paintings</a>
       <a href="#contact">Enquiries</a>
     </div>
-
   </div>
 
   <div class="footer-bottom">
     <span>© 2026 The Coastal Studio</span>
     <span>Original works of art</span>
   </div>
-
 </footer>
 
-<!-- PAINTING POPUP -->
-
 <div class="modal" id="paintingModal" onclick="closeModalOutside(event)">
-
   <div class="modal-content">
-
     <button class="close-modal" onclick="closeModal()">×</button>
-
     <img class="modal-image" id="modalImage" src="" alt="">
 
     <div class="modal-details">
-
       <div class="eyebrow">Original artwork</div>
-
       <h2 id="modalTitle"></h2>
-
       <p id="modalDescription"></p>
-
       <p id="modalDimensions"></p>
-
       <div class="modal-price" id="modalPrice"></div>
-
-      <a id="modalBuy" class="buy-button" href="#">
-        Enquire about this painting
-      </a>
-
+      <a id="modalBuy" class="buy-button" href="#">Enquire about this painting</a>
     </div>
-
   </div>
-
 </div>
 
 <div class="cursor" id="cursor"></div>
 
 <script>
-
-/* =====================================
-
-   PAINTING LISTINGS
-
-   Temporary sample paintings.
-   Replace these with actual artwork.
-
-   ===================================== */
 
 const paintings = [
 
@@ -1062,8 +921,6 @@ const paintings = [
 
 ];
 
-/* DISPLAY PAINTINGS */
-
 const grid = document.getElementById("paintingGrid");
 
 function displayPaintings() {
@@ -1080,7 +937,6 @@ function displayPaintings() {
         <img src="${painting.image}" alt="${painting.title}" loading="lazy">
         <div class="view-label">VIEW ARTWORK</div>
       </div>
-
       <div class="painting-info">
         <div>
           <div class="painting-title"></div>
@@ -1101,8 +957,6 @@ function displayPaintings() {
   });
 
 }
-
-/* OPEN PAINTING DETAILS */
 
 function openModal(index) {
 
@@ -1142,37 +996,23 @@ function openModal(index) {
 }
 
 function closeModal() {
-
   document.getElementById("paintingModal").classList.remove("active");
   document.body.style.overflow = "";
-
 }
 
 function closeModalOutside(event) {
-
-  if (event.target.id === "paintingModal") {
-    closeModal();
-  }
-
+  if (event.target.id === "paintingModal") closeModal();
 }
-
-/* MOBILE NAVIGATION */
 
 function toggleMenu() {
-
   document.getElementById("mobileNav").classList.toggle("open");
-
 }
 
-/* KEYBOARD */
-
 document.addEventListener("keydown", event => {
-
   if (event.key === "Escape") {
     closeModal();
     document.getElementById("mobileNav").classList.remove("open");
   }
-
 });
 
 /* CUSTOM CURSOR */
@@ -1182,28 +1022,19 @@ const cursor = document.getElementById("cursor");
 if (window.matchMedia("(pointer: fine)").matches) {
 
   document.addEventListener("mousemove", event => {
-
     cursor.style.left = event.clientX + "px";
     cursor.style.top = event.clientY + "px";
     cursor.classList.add("visible");
-
   });
 
   document.querySelectorAll("a, button, .painting-card").forEach(element => {
 
-    element.addEventListener("mouseenter", () => {
-      cursor.classList.add("hover");
-    });
-
-    element.addEventListener("mouseleave", () => {
-      cursor.classList.remove("hover");
-    });
+    element.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+    element.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
 
   });
 
 }
-
-/* INITIALISE */
 
 displayPaintings();
 
