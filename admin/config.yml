@@ -1,2 +1,52 @@
+
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: lu-aldridge-art/lu-aldridge-art
+  branch: main
+
 media_folder: images/uploads
 public_folder: /lu-aldridge-art/images/uploads
+
+collections:
+  - name: paintings
+    label: Paintings
+    files:
+      - name: gallery
+        label: Painting Gallery
+        file: data/paintings.json
+        format: json
+        fields:
+          - name: paintings
+            label: Paintings
+            widget: list
+            root: true
+            summary: "{{title}}"
+            thumbnail: image
+            fields:
+              - name: title
+                label: Painting Title
+                widget: string
+
+              - name: price
+                label: Price (£)
+                widget: number
+                value_type: int
+
+              - name: dimensions
+                label: Dimensions
+                widget: string
+
+              - name: image
+                label: Painting Photograph
+                widget: image
+
+              - name: description
+                label: Description
+                widget: text
+
+              - name: checkoutUrl
+                label: Purchase Link
+                widget: string
+                required: false
