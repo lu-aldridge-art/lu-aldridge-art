@@ -1,10 +1,26 @@
 [
   {
-    "title": "coastal",
-    "price": 1000000,
-    "dimensions": "1x1",
-    "image": "/lu-aldridge-art/images/uploads/copy_5648F309-B76D-4BE5-AB15-664E5B7E9C8A.jpeg",
-    "description": "nice painting",
+    "title": "Evening light",
+    "price": 100,
+    "dimensions": "70 x 52 cm",
+    "image": "/lu-aldridge-art/images/uploads/IMG_8004.jpeg",
+    "description": "Oil on hand made thick edge canvas in a hand made floating wooden frame. \n***The canvas is not quite square***",
+    "checkoutUrl": ""
+  },
+  {
+    "title": "After light",
+    "price": 75,
+    "dimensions": "54 x 43 cm",
+    "image": "/lu-aldridge-art/images/uploads/IMG_8005.jpeg",
+    "description": "Oil on board in hand made hard wood frame.",
+    "checkoutUrl": ""
+  },
+  {
+    "title": "Wind swept",
+    "price": 75,
+    "dimensions": "49 x 38 cm",
+    "image": "/lu-aldridge-art/images/uploads/IMG_8006.jpeg",
+    "description": "Oil on hand made thick edge canvas. Framed in a wooden hand made floating frame.",
     "checkoutUrl": ""
   }
 ]
