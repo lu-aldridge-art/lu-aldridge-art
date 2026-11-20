@@ -4,12 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#006b62">
-
 <title>Lu Aldridge Art | Original Paintings</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -20,14 +19,12 @@
   --stone: #D9D5CA;
   --muted: #777C76;
   --white: #FFFFFF;
-
   --sans: 'Inter', Arial, sans-serif;
-  --serif: 'Bodoni Moda', 'Times New Roman', serif;
-  --display: 'Bodoni Moda', 'Times New Roman', serif;
+  --serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --display: 'Cormorant Garamond', 'Times New Roman', serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -42,7 +39,6 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; }
 
 /* CURSOR */
-
 @media (pointer: fine) {
   html, body, body *, a, button {
     cursor: none !important;
@@ -69,7 +65,6 @@ button { font: inherit; }
 .cursor.hover { width: 38px; height: 38px; }
 
 /* ANNOUNCEMENT */
-
 .announcement {
   background: var(--teal);
   color: white;
@@ -82,7 +77,6 @@ button { font: inherit; }
 }
 
 /* HEADER */
-
 header {
   min-height: 110px;
   padding: 0 6%;
@@ -111,7 +105,6 @@ nav a {
 }
 
 nav a:hover { color: var(--teal); }
-
 .brand { text-align: center; }
 
 .brand-name {
@@ -130,14 +123,6 @@ nav a:hover { color: var(--teal); }
   text-transform: uppercase;
   margin-top: 6px;
   color: var(--muted);
-}
-
-.crest {
-  display: block;
-  width: 112px;
-  height: 104px;
-  object-fit: contain;
-  margin: 9px auto 5px;
 }
 
 .mobile-menu {
@@ -171,7 +156,6 @@ nav a:hover { color: var(--teal); }
 }
 
 /* HERO */
-
 .hero {
   min-height: 650px;
   height: calc(90vh - 110px);
@@ -236,7 +220,6 @@ nav a:hover { color: var(--teal); }
 }
 
 /* INTRODUCTION */
-
 .intro {
   padding: 120px 20px 110px;
   text-align: center;
@@ -264,7 +247,6 @@ nav a:hover { color: var(--teal); }
 }
 
 /* COLLECTION */
-
 .collection {
   padding: 85px 7% 120px;
   background: var(--white);
@@ -364,7 +346,6 @@ nav a:hover { color: var(--teal); }
 }
 
 /* FEATURE */
-
 .feature {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -420,18 +401,10 @@ nav a:hover { color: var(--teal); }
 .text-link:hover { opacity: .6; }
 
 /* ABOUT */
-
 .about {
   padding: 120px 20px;
   text-align: center;
   background: var(--ivory);
-}
-
-.about-crest {
-  display: block;
-  width: 145px;
-  height: auto;
-  margin: 0 auto 28px;
 }
 
 .about .eyebrow { color: var(--teal); }
@@ -453,7 +426,6 @@ nav a:hover { color: var(--teal); }
 }
 
 /* CONTACT */
-
 .contact {
   text-align: center;
   padding: 105px 20px;
@@ -478,7 +450,6 @@ nav a:hover { color: var(--teal); }
 }
 
 /* FOOTER */
-
 footer {
   background: var(--teal);
   color: var(--ivory);
@@ -529,7 +500,6 @@ footer {
 }
 
 /* PAINTING DETAILS */
-
 .modal {
   display: none;
   position: fixed;
@@ -616,16 +586,13 @@ footer {
 }
 
 /* ANIMATION */
-
 @keyframes appear {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 /* MOBILE */
-
 @media(max-width: 800px) {
-
   header {
     min-height: 85px;
     grid-template-columns: 1fr auto 1fr;
@@ -647,12 +614,6 @@ footer {
   }
 
   .brand-subtitle { font-size: 6px; }
-
-  .crest {
-    width: 76px;
-    height: 70px;
-    margin-top: 7px;
-  }
 
   .hero {
     min-height: 600px;
@@ -713,9 +674,7 @@ footer {
 }
 
 @media(max-width: 450px) {
-
   .painting-grid { grid-template-columns: 1fr; }
-
   .painting-image { aspect-ratio: 4 / 5; }
 
   .footer-bottom {
@@ -723,7 +682,6 @@ footer {
     gap: 12px;
     text-align: center;
   }
-
 }
 </style>
 </head>
@@ -735,7 +693,6 @@ footer {
 </div>
 
 <header>
-
   <button class="mobile-menu" aria-label="Open navigation" onclick="toggleMenu()">☰</button>
 
   <nav class="nav-left">
@@ -744,12 +701,8 @@ footer {
   </nav>
 
   <a href="#" class="brand">
-
-    <img class="crest" src="lu-aldridge-art-crest.png" alt="Lu Aldridge Art heraldic crest">
-
     <div class="brand-name">Lu Aldridge Art</div>
     <div class="brand-subtitle">Original works of art</div>
-
   </a>
 
   <nav class="nav-right">
@@ -762,7 +715,6 @@ footer {
     <a href="#about" onclick="toggleMenu()">The Artist</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
   </nav>
-
 </header>
 
 <main>
@@ -813,8 +765,6 @@ footer {
 </section>
 
 <section class="about" id="about">
-  <img class="about-crest" src="lu-aldridge-art-crest.png" alt="Lu Aldridge Art heraldic crest">
-
   <div class="eyebrow">The artist</div>
   <h2>A little about me.</h2>
   <p>
@@ -880,9 +830,7 @@ footer {
 <div class="cursor" id="cursor"></div>
 
 <script>
-
 const paintings = [
-
   {
     title: "Morning Light",
     price: "£450",
@@ -892,7 +840,6 @@ const paintings = [
     description: "An exploration of the changing light across the water.",
     checkoutUrl: ""
   },
-
   {
     title: "The Shoreline",
     price: "£380",
@@ -902,7 +849,6 @@ const paintings = [
     description: "Inspired by the quiet beauty of the shoreline.",
     checkoutUrl: ""
   },
-
   {
     title: "Open Water",
     price: "£520",
@@ -912,17 +858,14 @@ const paintings = [
     description: "A study of the movement and atmosphere of the sea.",
     checkoutUrl: ""
   }
-
 ];
 
 const grid = document.getElementById("paintingGrid");
 
 function displayPaintings() {
-
   grid.innerHTML = "";
 
   paintings.forEach((painting, index) => {
-
     const card = document.createElement("div");
     card.className = "painting-card";
 
@@ -947,13 +890,10 @@ function displayPaintings() {
     card.addEventListener("click", () => openModal(index));
 
     grid.appendChild(card);
-
   });
-
 }
 
 function openModal(index) {
-
   const painting = paintings[index];
 
   document.getElementById("modalImage").src = painting.image;
@@ -969,24 +909,19 @@ function openModal(index) {
   const buyButton = document.getElementById("modalBuy");
 
   if (painting.checkoutUrl) {
-
     buyButton.href = painting.checkoutUrl;
     buyButton.target = "_blank";
     buyButton.textContent = "Purchase artwork";
-
   } else {
-
     buyButton.href = "mailto:YOUR_EMAIL@example.com?subject=" +
       encodeURIComponent("Enquiry about " + painting.title);
 
     buyButton.removeAttribute("target");
     buyButton.textContent = "Enquire about this painting";
-
   }
 
   document.getElementById("paintingModal").classList.add("active");
   document.body.style.overflow = "hidden";
-
 }
 
 function closeModal() {
@@ -1010,11 +945,9 @@ document.addEventListener("keydown", event => {
 });
 
 /* CUSTOM CURSOR */
-
 const cursor = document.getElementById("cursor");
 
 if (window.matchMedia("(pointer: fine)").matches) {
-
   document.addEventListener("mousemove", event => {
     cursor.style.left = event.clientX + "px";
     cursor.style.top = event.clientY + "px";
@@ -1022,16 +955,12 @@ if (window.matchMedia("(pointer: fine)").matches) {
   });
 
   document.querySelectorAll("a, button, .painting-card").forEach(element => {
-
     element.addEventListener("mouseenter", () => cursor.classList.add("hover"));
     element.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
-
   });
-
 }
 
 displayPaintings();
-
 </script>
 
 </body>
