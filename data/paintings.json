@@ -1,2 +1,10 @@
-
-[]
+[
+  {
+    "title": "coastal",
+    "price": 1000000,
+    "dimensions": "1x1",
+    "image": "/lu-aldridge-art/images/uploads/copy_5648F309-B76D-4BE5-AB15-664E5B7E9C8A.jpeg",
+    "description": "nice painting",
+    "checkoutUrl": ""
+  }
+]
