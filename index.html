@@ -345,6 +345,15 @@ nav a:hover { color: var(--teal); }
   padding-top: 7px;
 }
 
+.empty-gallery {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+  padding: 35px 15px;
+}
+
 /* FEATURE */
 .feature {
   display: grid;
@@ -830,62 +839,109 @@ footer {
 <div class="cursor" id="cursor"></div>
 
 <script>
-const paintings = [
-  {
-    title: "Morning Light",
-    price: "£450",
-    image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85",
-    medium: "Original painting",
-    dimensions: "60 × 80 cm",
-    description: "An exploration of the changing light across the water.",
-    checkoutUrl: ""
-  },
-  {
-    title: "The Shoreline",
-    price: "£380",
-    image: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1000&q=85",
-    medium: "Original painting",
-    dimensions: "50 × 70 cm",
-    description: "Inspired by the quiet beauty of the shoreline.",
-    checkoutUrl: ""
-  },
-  {
-    title: "Open Water",
-    price: "£520",
-    image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85",
-    medium: "Original painting",
-    dimensions: "70 × 90 cm",
-    description: "A study of the movement and atmosphere of the sea.",
-    checkoutUrl: ""
-  }
-];
+/* PAINTING DATA */
+let paintings = [];
 
 const grid = document.getElementById("paintingGrid");
 
+/* FORMAT PRICE */
+function formatPrice(price) {
+  if (price === undefined || price === null || price === "") {
+    return "Price on request";
+  }
+
+  const numericPrice = Number(price);
+
+  if (Number.isNaN(numericPrice)) {
+    return String(price);
+  }
+
+  return new Intl.NumberFormat("en-GB", {
+    style: "currency",
+    currency: "GBP",
+    maximumFractionDigits: 2
+  }).format(numericPrice);
+}
+
+/* IMAGE PATH */
+function getImagePath(image) {
+  if (!image) return "";
+
+  // Keep complete image URLs unchanged.
+  if (/^https?:\/\//i.test(image) || image.startsWith("data:")) {
+    return image;
+  }
+
+  // Keep paths already pointing to the GitHub Pages site unchanged.
+  if (image.startsWith("/lu-aldridge-art/")) {
+    return image;
+  }
+
+  // Support root-relative paths from the CMS.
+  if (image.startsWith("/")) {
+    return image;
+  }
+
+  // Support paths stored relative to the repository.
+  return "/lu-aldridge-art/" + image.replace(/^\.?\//, "");
+}
+
+/* DISPLAY PAINTINGS */
 function displayPaintings() {
   grid.innerHTML = "";
+
+  if (!paintings.length) {
+    const message = document.createElement("p");
+    message.className = "empty-gallery";
+    message.textContent = "New original paintings will be added soon. Please check back shortly.";
+    grid.appendChild(message);
+    return;
+  }
 
   paintings.forEach((painting, index) => {
     const card = document.createElement("div");
     card.className = "painting-card";
 
-    card.innerHTML = `
-      <div class="painting-image">
-        <img src="${painting.image}" alt="${painting.title}" loading="lazy">
-        <div class="view-label">VIEW ARTWORK</div>
-      </div>
-      <div class="painting-info">
-        <div>
-          <div class="painting-title"></div>
-          <div class="painting-medium"></div>
-        </div>
-        <div class="painting-price"></div>
-      </div>
-    `;
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "painting-image";
 
-    card.querySelector(".painting-title").textContent = painting.title;
-    card.querySelector(".painting-medium").textContent = painting.medium;
-    card.querySelector(".painting-price").textContent = painting.price;
+    const image = document.createElement("img");
+    image.src = getImagePath(painting.image);
+    image.alt = painting.title || "Original painting";
+    image.loading = "lazy";
+
+    const viewLabel = document.createElement("div");
+    viewLabel.className = "view-label";
+    viewLabel.textContent = "VIEW ARTWORK";
+
+    imageContainer.appendChild(image);
+    imageContainer.appendChild(viewLabel);
+
+    const info = document.createElement("div");
+    info.className = "painting-info";
+
+    const textContainer = document.createElement("div");
+
+    const title = document.createElement("div");
+    title.className = "painting-title";
+    title.textContent = painting.title || "Untitled";
+
+    const medium = document.createElement("div");
+    medium.className = "painting-medium";
+    medium.textContent = painting.medium || "Original painting";
+
+    const price = document.createElement("div");
+    price.className = "painting-price";
+    price.textContent = formatPrice(painting.price);
+
+    textContainer.appendChild(title);
+    textContainer.appendChild(medium);
+
+    info.appendChild(textContainer);
+    info.appendChild(price);
+
+    card.appendChild(imageContainer);
+    card.appendChild(info);
 
     card.addEventListener("click", () => openModal(index));
 
@@ -893,30 +949,69 @@ function displayPaintings() {
   });
 }
 
+/* LOAD PAINTINGS FROM CMS JSON */
+async function loadPaintings() {
+  try {
+    const response = await fetch("./data/paintings.json", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error("Could not load the painting collection.");
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      throw new Error("The painting data is not in the expected format.");
+    }
+
+    paintings = data;
+    displayPaintings();
+
+  } catch (error) {
+    console.error("Painting gallery error:", error);
+
+    grid.innerHTML = "";
+
+    const message = document.createElement("p");
+    message.className = "empty-gallery";
+    message.textContent = "The collection is temporarily unavailable. Please try again shortly.";
+
+    grid.appendChild(message);
+  }
+}
+
+/* OPEN PAINTING */
 function openModal(index) {
   const painting = paintings[index];
 
-  document.getElementById("modalImage").src = painting.image;
-  document.getElementById("modalImage").alt = painting.title;
-  document.getElementById("modalTitle").textContent = painting.title;
-  document.getElementById("modalDescription").textContent = painting.description;
+  if (!painting) return;
 
+  document.getElementById("modalImage").src = getImagePath(painting.image);
+  document.getElementById("modalImage").alt = painting.title || "Original painting";
+  document.getElementById("modalTitle").textContent = painting.title || "Untitled";
+  document.getElementById("modalDescription").textContent = painting.description || "";
   document.getElementById("modalDimensions").textContent =
-    painting.dimensions + " · " + painting.medium;
+    [painting.dimensions, painting.medium || "Original painting"]
+      .filter(Boolean)
+      .join(" · ");
 
-  document.getElementById("modalPrice").textContent = painting.price;
+  document.getElementById("modalPrice").textContent = formatPrice(painting.price);
 
   const buyButton = document.getElementById("modalBuy");
 
   if (painting.checkoutUrl) {
     buyButton.href = painting.checkoutUrl;
     buyButton.target = "_blank";
+    buyButton.rel = "noopener noreferrer";
     buyButton.textContent = "Purchase artwork";
   } else {
     buyButton.href = "mailto:YOUR_EMAIL@example.com?subject=" +
-      encodeURIComponent("Enquiry about " + painting.title);
+      encodeURIComponent("Enquiry about " + (painting.title || "this painting"));
 
     buyButton.removeAttribute("target");
+    buyButton.removeAttribute("rel");
     buyButton.textContent = "Enquire about this painting";
   }
 
@@ -924,19 +1019,24 @@ function openModal(index) {
   document.body.style.overflow = "hidden";
 }
 
+/* CLOSE PAINTING */
 function closeModal() {
   document.getElementById("paintingModal").classList.remove("active");
   document.body.style.overflow = "";
 }
 
 function closeModalOutside(event) {
-  if (event.target.id === "paintingModal") closeModal();
+  if (event.target.id === "paintingModal") {
+    closeModal();
+  }
 }
 
+/* MOBILE MENU */
 function toggleMenu() {
   document.getElementById("mobileNav").classList.toggle("open");
 }
 
+/* KEYBOARD CONTROLS */
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") {
     closeModal();
@@ -960,7 +1060,8 @@ if (window.matchMedia("(pointer: fine)").matches) {
   });
 }
 
-displayPaintings();
+/* START THE GALLERY */
+loadPaintings();
 </script>
 
 </body>
